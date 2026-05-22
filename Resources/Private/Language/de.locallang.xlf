@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="EXT:person/Resources/Private/Language/locallang_db.xlf" date="2026-05-03T21:06:14Z" product-name="person">
+        <header/>
+        <body>
+            <trans-unit id="plugin.pi1.title">
+                <source>Person - index</source>
+                 <target state="translated">Personenauswahl konfigurierbar</target>
+            </trans-unit>
+            <trans-unit id="plugin.pi1.description">
+                <source>Plugin to show personal data from the LDAP</source>
+                <target state="translated">Konfigurierbares Plugin zur Darstellung der Personen.</target>    
+            </trans-unit> 
+            
+            <trans-unit id="plugin.pi2.title">
+                <source>Person - list</source>
+                 <target state="translated">Personenliste</target>
+            </trans-unit>
+            <trans-unit id="plugin.pi2.description">
+                <source>Plugin to show grouped personal data</source>
+                <target state="translated">Plugin zur gruppierten Darstellung der Personen.</target>  
+            </trans-unit>   
+            
+            <trans-unit id="plugin.pi3.title">
+                <source>Person - search</source>
+                <target state="translated">Personensuche</target>
+            </trans-unit>
+            <trans-unit id="plugin.pi3.description">
+                <source>Plugin to show personal data searchfuntion</source>
+                <target state="translated">Plugin zur Darstellung der Personen mit Suche.</target>  
+            </trans-unit>
+            
+            <trans-unit id="tabs.flexform">
+                <source>Options</source>
+                 <target state="translated">Einstellungen</target>                
+            </trans-unit>
+            
+            
+            
+            <trans-unit id="department" resname="department">
+                <source>Department</source>
+                <target state="translated">Abteilung</target>               
+            </trans-unit>
+            <trans-unit id="office" resname="office">
+                <source>Office</source>
+                <target state="translated">Büro</target>  
+            </trans-unit>
+            <trans-unit id="position" resname="position">
+                <source>Position</source>
+                <target state="translated">Position</target>  
+            </trans-unit>      
+            <trans-unit id="area" resname="area">
+                <source>Area</source>
+                <target state="translated">Bereich</target>  
+            </trans-unit>
+            <trans-unit id="gender" resname="gender">
+                <source>Gender</source>
+                <target state="translated">Geschlecht</target>  
+            </trans-unit>                 
+             <trans-unit id="submit" resname="submit">
+                <source>Submit</source>
+                <target state="translated">Suchen</target>  
+            </trans-unit>                  
+             <trans-unit id="reset" resname="reset">
+                <source>Reset</source>
+                <target state="translated">Zurücksetzen</target>  
+            </trans-unit>               
+              <trans-unit id="search" resname="search">
+                <source>Search</source>
+                <target state="translated">Suche</target>  
+            </trans-unit> 
+              <trans-unit id="hits" resname="hits">
+                <source>Hits</source>
+                <target state="translated">Treffer</target>  
+            </trans-unit>   
+            
+            
+            
+                        
+        </body>
+    </file>
+</xliff>

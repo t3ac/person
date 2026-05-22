@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" product-name="person">
+        <header/>
+        <body>
+            <trans-unit id="plugin.pi1.title">
+                <source>Person - index</source>
+            </trans-unit>
+            <trans-unit id="plugin.pi1.description">
+                <source>Plugin to show personal data from the LDAP</source>
+            </trans-unit> 
+            
+            <trans-unit id="plugin.pi2.title">
+                <source>Person - list</source>
+            </trans-unit>
+            <trans-unit id="plugin.pi2.description">
+                <source>Plugin to show grouped personal data</source>
+            </trans-unit>  
+            
+            <trans-unit id="plugin.pi3.title">
+                <source>Person - search</source>
+            </trans-unit>
+            <trans-unit id="plugin.pi3.description">
+                <source>Plugin to show personal data searchfuntion</source>
+            </trans-unit>
+            
+            <trans-unit id="tabs.flexform">
+                <source>Options</source>
+            </trans-unit>
+
+            <trans-unit id="fe_users.tab" resname="fe_users.tab">
+                <source>GG Info</source>
+            </trans-unit>       
+        
+            <trans-unit id="person" resname="person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="name" resname="name">
+                <source>Name</source>
+            </trans-unit>           
+            <trans-unit id="communication" resname="communication">
+                <source>Communication</source>
+            </trans-unit>   
+            <trans-unit id="select" resname="select">
+                <source>Select</source>
+            </trans-unit>   
+            <trans-unit id="none" resname="none">
+                <source>not specified</source>
+            </trans-unit>       
+            <trans-unit id="d" resname="d">
+                <source>divers</source>
+            </trans-unit>   
+            <trans-unit id="m" resname="m">
+                <source>male</source>
+            </trans-unit>   
+            <trans-unit id="f" resname="f">
+                <source>female</source>
+            </trans-unit>   
+
+            <trans-unit id="department" resname="department">
+                <source>Department</source>
+            </trans-unit>
+            <trans-unit id="office" resname="office">
+                <source>Office</source>
+            </trans-unit>
+            <trans-unit id="position" resname="position">
+                <source>Position</source>
+            </trans-unit>      
+            <trans-unit id="area" resname="area">
+                <source>Area</source>
+            </trans-unit>
+            <trans-unit id="gender" resname="gender">
+                <source>Gender</source>
+            </trans-unit>                 
+             <trans-unit id="submit" resname="submit">
+                <source>Submit</source>
+            </trans-unit>                  
+             <trans-unit id="reset" resname="reset">
+                <source>Reset</source>
+            </trans-unit>               
+              <trans-unit id="search" resname="search">
+                <source>Search</source>
+            </trans-unit> 
+              <trans-unit id="hits" resname="hits">
+                <source>Hits</source>
+            </trans-unit>   
+
+        
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2021-11-04T13:09:36Z" product-name="person">
+		<header/>
+		<body>
+			<trans-unit id="sheet_person">
+				<source>Select person</source>
+			</trans-unit>	
+		
+        
+            <trans-unit id="startingpoint">
+                <source>Startingpoint</source>
+            </trans-unit>   
+		
+			<trans-unit id="person">
+				<source>Individual selection</source>
+			</trans-unit>										
+			<trans-unit id="sort">
+				<source>Sorting of the individual selection</source>
+			</trans-unit>					
+		
+			<trans-unit id="sheet_personaldata">
+				<source>Display personal data</source>
+			</trans-unit>	
+
+           <trans-unit id="switch">
+                <source>Output selection</source>
+            </trans-unit>                     
+			<trans-unit id="choose">
+				<source>Standard</source>
+			</trans-unit>	
+             
+            <trans-unit id="all">
+                <source>Complete list with single view</source>
+            </trans-unit>
+             <trans-unit id="searchlist">
+                <source>list with search function</source>
+            </trans-unit>           
+            				
+							
+			<trans-unit id="department">
+				<source>Department</source>
+			</trans-unit>							
+            <trans-unit id="area">
+				<source>Area</source>
+			</trans-unit>							
+            <trans-unit id="position">
+                <source>Position</source>
+            </trans-unit>   				
+            <trans-unit id="itemsPerPage">
+                <source>Items per page</source>
+            </trans-unit>   					
+			
+			<trans-unit id="gender">
+				<source>Hides/show gender</source>
+			</trans-unit>				
+			<trans-unit id="noname">
+				<source>Hide the name in the frontend (only in Singleview)</source>
+			</trans-unit>	
+			<trans-unit id="onlyname">
+				<source>Show only the surname</source>
+			</trans-unit>				
+			
+			<trans-unit id="subtitle">
+				<source>Subtitle (only in Singleview)</source>
+			</trans-unit>	
+			
+
+			<trans-unit id="sheet_contactdata">
+				<source>Contact data</source>
+			</trans-unit>			
+			
+			
+			<trans-unit id="zipcity">
+				<source>Zip / city</source>
+			</trans-unit>					
+			<trans-unit id="address">
+				<source>Address</source>
+			</trans-unit>	
+			<trans-unit id="office">
+				<source>Office</source>
+			</trans-unit>	
+			<trans-unit id="telephone">
+				<source>Telephone</source>
+			</trans-unit>	
+			<trans-unit id="fax">
+				<source>Fax</source>
+			</trans-unit>	
+			<trans-unit id="mobil">
+				<source>Mobil</source>
+			</trans-unit>		
+			<trans-unit id="www">
+				<source>Website</source>
+			</trans-unit>						
+			<trans-unit id="email">
+				<source>Email</source>
+			</trans-unit>	
+			<trans-unit id="ownemail">
+				<source>Department E-Mail address</source>
+			</trans-unit>
+				
+				
+			<trans-unit id="emailformat">
+				<source>Emailformat</source>
+			</trans-unit>		
+			<trans-unit id="emailformat.choose">
+				<source>Choose</source>
+			</trans-unit>						
+			<trans-unit id="emailformat.classical">
+				<source>Classical</source>
+			</trans-unit>				
+			<trans-unit id="emailformat.name">
+				<source>Only name</source>
+			</trans-unit>				
+			<trans-unit id="emailformat.mailsymbol">
+				<source>Only E-Mail</source>
+			</trans-unit>	
+			<trans-unit id="sheet_display">
+				<source>Display</source>
+			</trans-unit>	
+			<trans-unit id="templates">
+				<source>Templates</source>
+			</trans-unit>			
+			<trans-unit id="pagination">
+				<source>Pagination</source>
+			</trans-unit>		
+			<trans-unit id="pagination.0">
+				<source>no</source>
+			</trans-unit>		
+			<trans-unit id="pagination.1">
+				<source>yes</source>
+			</trans-unit>	
+			<trans-unit id="pagination.2">
+				<source>abc</source>
+			</trans-unit>			
+			
+			<trans-unit id="items">
+				<source>Items</source>
+			</trans-unit>			
+			<trans-unit id="show">
+				<source>show/hide</source>
+			</trans-unit>	
+			
+			<trans-unit id="maximumLinks">
+				<source>Max. Links</source>
+			</trans-unit>	
+			
+			<trans-unit id="itemPerPage">
+				<source>Items per page</source>
+			</trans-unit>			
+			
+			
+						
+			
+
+		</body>		
+	</file>
+</xliff>			

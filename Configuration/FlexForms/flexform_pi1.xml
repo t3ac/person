@@ -1,0 +1,281 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:sheet_person</sheetTitle>
+                <type>array</type>
+                <el>                           
+                    
+                    
+                    <settings.pages>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:startingpoint</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>3</size>
+                            <maxitems>10</maxitems>
+                            <minitems>0</minitems>
+                            <suggestOptions>
+                                <default>
+                                    <searchWholePhrase>1</searchWholePhrase>
+                                </default>
+                            </suggestOptions>
+                        </config>
+                    </settings.pages>
+                                        
+                    <settings.area>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:area</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <itemsProcFunc>T3ac\Person\Backend\FlexFormItems->getAreas</itemsProcFunc>
+                        </config>
+                    </settings.area>                                        
+                                        
+                                        
+                    <settings.department>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:department</label>
+                        <displayCond>FIELD:settings.area:REQ:TRUE</displayCond>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <itemsProcFunc>T3ac\Person\Backend\FlexFormItems->getDepartments</itemsProcFunc>
+                        </config>
+                    </settings.department>
+                    
+                                        <!-- 2. Auswahl der User (gefiltert) -->
+                    <settings.user>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:users</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectMultipleSideBySide</renderType>
+                            <itemsProcFunc>T3ac\Person\Backend\FlexFormItems->getUsersByDepartment</itemsProcFunc>
+                            <enableMultiSelectFilterTextfield>TRUE</enableMultiSelectFilterTextfield>
+                        </config>
+                    </settings.user>
+                    
+                    <settings.sort>
+                       <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:sort</label>                            
+                       <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.sort>
+                    
+                    <settings.itemsPerPage>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:itemsPerPage</label>
+                        <config>
+                            <type>input</type>
+                            <eval>int</eval>
+                            <default>10</default>
+                            <size>3</size>
+                        </config>
+                    </settings.itemsPerPage>
+                </el>
+            </ROOT>
+        </sDEF>
+        
+        <sPerson>
+            <ROOT>
+                <sheetTitle>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:sheet_personaldata</sheetTitle>
+                <el>  
+                    <settings.position>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:position</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                             <default>0</default>
+                        </config>
+                    </settings.position>    
+
+                    <settings.areashow>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:area</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                             <default>0</default>
+                        </config>
+                    </settings.areashow>
+                    
+                     <settings.departmentshow>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:department</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                             <default>0</default>
+                        </config>
+                    </settings.departmentshow>
+                    
+                    <settings.email>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:email</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>1</default>
+                        </config>
+                    </settings.email>        
+
+
+                    <settings.emailformat>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:emailformat</label>
+                        <config>
+                            <type>selectSingle</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>Bitte auswählen</label>
+                                    <value>0</value>
+                                </numIndex>                                
+                                <numIndex index="1" type="array">
+                                    <label>Klassisch</label>
+                                    <value>1</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>Nur Name</label>
+                                    <value>2</value>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <label>Symbol</label>
+                                    <value>3</value>
+                                </numIndex>
+                            </items>
+                             <default>1</default>
+                        </config>
+                    </settings.emailformat>
+                    
+                    <settings.gender>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:gender</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                             <default>0</default>
+                        </config>
+                    </settings.gender>
+                    
+                    <settings.onlyname>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:onlyname</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                             <default>0</default>
+                        </config>
+                    </settings.onlyname>
+                
+                    <settings.ownemail>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:ownemail</label>
+                        <config>
+                            <type>input</type>
+                            <size>30</size>
+                        </config>
+                    </settings.ownemail>  
+                    
+                </el>
+            </ROOT>
+        </sPerson>
+        <sCONTACT>
+            <ROOT>
+                <sheetTitle>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:sheet_contactdata</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.zip>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:zipcity</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>1</default>
+                        </config>
+                    </settings.zip>
+                    
+                    <settings.address>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:address</label>                         
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>1</default>
+                        </config>
+                    </settings.address>
+      
+                    <settings.office>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:office</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>1</default>
+                        </config>
+                    </settings.office>
+
+                    <settings.telephone>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:telephone</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>1</default>
+                        </config>
+                    </settings.telephone>
+                    
+                    <settings.fax>
+                        <label>LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:fax</label>
+                        <config>
+                            <type>check</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:person/Resources/Private/Language/locallang_flexform.xlf:show</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>0</default>
+                        </config>
+                    </settings.fax>
+                </el>
+            </ROOT>
+        </sCONTACT>
+    </sheets>
+</T3DataStructure>

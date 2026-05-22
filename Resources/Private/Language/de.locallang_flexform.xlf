@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2021-11-04T13:09:36Z" product-name="hda_personen">
+        <header/>
+        <body>
+			<trans-unit id="sheet_person">
+				<source>Select person</source>
+				<target state="translated">Personenauswahl</target>
+			</trans-unit>	
+		
+			<trans-unit id="startingpoint">
+				<source>Startingpoint</source>
+				<target state="translated">Startpunkt</target>
+			</trans-unit>		
+			<trans-unit id="department">
+				<source>Department</source>
+				<target state="translated">Abteilung</target>
+			</trans-unit>		   	
+            <trans-unit id="area">
+                <source>Areas</source>
+                <target state="translated">Bereich</target>	
+            </trans-unit>    		
+            <trans-unit id="users">
+                <source>Users</source>
+                <target state="translated">Personenauswahl</target>	
+            </trans-unit>                
+            
+			<trans-unit id="sort">
+				<source>Sorting of the selection</source>
+				<target state="translated">Auswahl im Frontend alphabetisch sortieren</target>
+			</trans-unit>	
+           <trans-unit id="itemsPerPage">
+                <source>Items per page</source>
+                <target state="translated">Einträge pro Seite - Paginierung</target>
+            </trans-unit>                       
+            
+		
+			<trans-unit id="sheet_personaldata">
+				<source>Display personal data</source>
+				<target state="translated">Personendaten</target>
+			</trans-unit>			
+			<trans-unit id="gender">
+				<source>Hides/show gender</source>
+				<target state="translated">Zeigt/versteckt die Anrede</target>	
+			</trans-unit>	
+    		     <trans-unit id="noname">
+				<source>Hide the name in the frontend (only in Singleview)</source>
+				<target state="translated">Den Namen verstecken (nur bei einer Einzelperson/-kontakt)</target>	
+			</trans-unit>	
+			<trans-unit id="onlyname">
+				<target state="translated">Nur den Nachnamen anzeigen</target>
+				<source>Show only the surname</source>
+			</trans-unit>	
+			<trans-unit id="subtitle">
+				<source>Subtitle (only in Singleview)</source>
+				<target state="translated">Zusatzinformation (nur bei einer Einzelperson/-kontakt)</target>
+			</trans-unit>	
+			
+			<trans-unit id="sheet_contactdata">
+				<source>Contact data</source>
+				<target state="translated">Kontaktdaten</target>
+			</trans-unit>			
+
+			<trans-unit id="zipcity">
+				<source>Zip / city</source>
+				<target state="translated">PLZ / Stadt</target>
+			</trans-unit>			
+			<trans-unit id="address">
+				<source>Address</source>
+				<target state="translated">Straße</target>
+			</trans-unit>	
+			<trans-unit id="office">
+				<source>Office</source>
+				<target state="translated">Büro</target>
+			</trans-unit>	
+			<trans-unit id="telephone">
+				<source>Telephone</source>
+				<target state="translated">Telefon</target>
+			</trans-unit>	
+			<trans-unit id="fax">
+				<source>Fax</source>
+				<target state="translated">Fax</target>
+			</trans-unit>	
+							
+			<trans-unit id="email">
+				<source>Email</source>
+				<target state="translated">E-Mail</target>
+			</trans-unit>	
+			<trans-unit id="ownemail">
+				<source>Department E-Mail address</source>
+				<target state="translated">Abteilungs-E-Mail</target>
+			</trans-unit>
+			
+			<trans-unit id="emailformat">
+				<source>Emailformat</source>
+				<target state="translated">E-Mail Format</target>
+			</trans-unit>		
+			<trans-unit id="emailformat.choose">
+				<source>Choose</source>
+				<target state="translated">Bitte wählen</target>
+			</trans-unit>						
+			<trans-unit id="emailformat.classical">
+				<source>Classical</source>
+				<target state="translated">Klassisches Format</target>
+			</trans-unit>				
+			<trans-unit id="emailformat.name">
+				<source>Only name</source>
+				<target state="translated">Nur Name</target>
+			</trans-unit>				
+			<trans-unit id="emailformat.mailsymbol">
+				<source>Only E-Mail</source>
+				<target state="translated">Nur E-Mail</target>
+			</trans-unit>	
+
+			<trans-unit id="sheet_display">
+				<source>Display</source>
+				<target state="translated">Darstellung</target>
+			</trans-unit>	
+			<trans-unit id="templates">
+				<source>Templates</source>
+				<target state="translated">Templateauswahl</target>
+			</trans-unit>			
+			<trans-unit id="pagination">
+				<source>Pagination</source>
+				<target state="translated">Seitenpaginierung</target>
+			</trans-unit>		
+			<trans-unit id="pagination.0">
+				<source>no</source>
+				<target state="translated">keine anzeigen</target>
+			</trans-unit>		
+			<trans-unit id="pagination.1">
+				<source>yes</source>
+				<target state="translated">anzeigen</target>
+			</trans-unit>	
+			<trans-unit id="pagination.2">
+				<source>abc</source>
+				<target state="translated">alphabetisch sortiert</target>
+			</trans-unit>	
+
+
+			<trans-unit id="items">
+				<source>Items</source>
+				<target state="translated">Anzahl, der angezeigten Datensätze.</target>
+			</trans-unit>			
+			<trans-unit id="show">
+				<source>show/hide</source>
+				<target state="translated">zeigen/verstecken</target>
+			</trans-unit>	
+
+		</body>		
+	</file>
+</xliff>			

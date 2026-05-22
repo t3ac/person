@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  # True! Wichtig für den Zugriff aus FlexForms
+  T3ac\Person\Backend\FlexFormItems:
+    public: true # Wichtig für den Zugriff aus FlexForms
+
+  # Controller MÜSSEN public sein
+  T3ac\Person\Controller\PersonController:
+    public: true
+    
+  # Repositories müssen public sein für das Autowiring
+  T3ac\Person\Domain\Repository\PersonRepository:
+    public: true

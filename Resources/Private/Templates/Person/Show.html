@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+
+	<div class="card w-100">
+		  <div class="card-body">  
+			    <h2>{person.firstName} {person.lastName}</h2>
+                <f:if condition="{person.title}">{person.title}<br /></f:if> 
+ 			<p>  <br />  
+                <f:if condition="{person.description}"><label>Fachbereich: </label> {person.description}<br /></f:if>               
+                <f:if condition="{person.department}"><label>Fachdienst: </label> {person.department}<br /></f:if>  
+            </p>             
+            <p>
+    			<f:if condition="{person.address}">{person.address}<br /></f:if>
+    			<f:if condition="{person.city}">{person.zip} {person.city}<br /></f:if>
+    			<f:if condition="{person.office}"><label>Raum: </label> {person.office}<br /></f:if>
+			</p>
+			
+             <p>   			
+                <f:if condition="{person.telephone}"><label>Telefon: </label> {person.telephone}<br /></f:if>
+    			<f:if condition="{person.fax}"><label>Fax: </label> {person.fax}<br /></f:if>
+    			<f:if condition="{person.email}"><label>E-Mail:</label> <f:link.email email="{person.email}" /><br /></f:if>
+    			<f:if condition="{person.homephone}"><label>Home:</label> <f:link.email email="{person.homephone}" /><br /></f:if>
+            </p>
+            
+			<div class="w-auto btn btn-secondary"><a class="backToList" href="javascript:history.back();">zurück</a></div>
+
+		</div>	
+	</div>
+</html>

@@ -1,0 +1,94 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:gg="http://typo3.org/ns/Gg/Person/ViewHelpers">
+                          
+<div>
+    <!-- ID für den Anker setzen -->
+    <div id="person-list-top"></div>
+
+		<f:form action="search" name="search" class="mb-4">
+		    <div class="input-group">
+		        <f:form.textfield name="searchWord" value="{searchWord}" class="form-control" />
+		        <f:form.submit value="Suchen" class="btn btn-primary" />
+		    </div>
+		</f:form>
+
+    <div class="abc-filter mb-4">
+        <ul class="pagination pagination-sm">
+            <li class="page-item {f:if(condition: '{activeChar} == \'\'', then: 'active')}">
+                <f:link.action action="search" class="page-link">Alle</f:link.action>
+            </li>
+            <f:for each="{allChars}" as="char">
+                <li class="page-item {f:if(condition: '{activeChar} == {char}', then: 'active')}">
+					<f:link.action action="search" arguments="{firstChar: char, searchWord: '{f:if(condition: searchWord, then: searchWord)}'}" class="page-link" section="person-list-top">
+					    {char -> f:format.case(mode: 'upper')}
+					</f:link.action>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+    
+    <!-- Personenliste (Muss aus dem Paginator lesen) -->
+    <ul>
+        <f:for each="{paginator.paginatedItems}" as="person">
+            <li>{person.name}</li>
+        </f:for>
+    </ul>
+
+    <!-- Paginierungs-Navigation -->
+    <f:if condition="{paginator.numberOfPages} > 1">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+    
+                <!-- ZURÜCK BUTTON (Korrigiert auf action="search") -->
+                <li class="page-item {f:if(condition: pagination.previousPageNumber, else: 'disabled')}">
+                    <f:if condition="{pagination.previousPageNumber}">
+                        <f:then>
+                            <f:link.action action="search" arguments="{currentPage: pagination.previousPageNumber, firstChar: activeChar, searchWord: searchWord}" section="person-list-top" class="page-link" aria-label="Zurück">
+                                <span aria-hidden="true">&laquo; Zurück</span>
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <span class="page-link">&laquo; Zurück</span>
+                        </f:else>
+                    </f:if>
+                </li>
+    
+                <!-- SEITENZAHLEN -->
+                <f:for each="{pagination.allPageNumbers}" as="page">
+                    <f:if condition="{page} == 1 || {page} == paginator.numberOfPages || ({page} >= {paginator.currentPageNumber - 2} && {page} <= {paginator.currentPageNumber + 2})">
+                        <f:then>
+                            <li class="page-item">
+                                <!-- arguments Syntax und Variablen bereinigt -->
+									<f:link.action action="search" arguments="{currentPage: page, firstChar: activeChar, searchWord: '{f:if(condition: searchWord, then: searchWord)}'}" section="person-list-top" class="page-link {f:if(condition: '{page} == paginator.currentPageNumber', then: 'activated')}">
+									    {page}
+									</f:link.action>                            
+							</li>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{page} == 2 || {page} == {paginator.numberOfPages - 1}">
+                                <li class="page-item disabled"><span class="page-link">..</span></li>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </f:for>
+    
+                <!-- WEITER BUTTON (Korrigiert auf action="search") -->
+                <li class="page-item {f:if(condition: pagination.nextPageNumber, else: 'disabled')}">
+                    <f:if condition="{pagination.nextPageNumber}">
+                        <f:then>
+                            <f:link.action action="search" arguments="{currentPage: pagination.nextPageNumber, firstChar: activeChar, searchWord: searchWord}" section="person-list-top" class="page-link" aria-label="Weiter">
+                                <span aria-hidden="true">Weiter &raquo;</span>
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <span class="page-link">Weiter &raquo;</span>
+                        </f:else>
+                    </f:if>
+                </li>
+    
+            </ul>
+        </nav>
+    </f:if>
+    <p><strong>{count}</strong> <f:translate key="LLL:EXT:person/Resources/Private/Language/locallang.xlf:hits"/></p>
+</div> 
+</html>

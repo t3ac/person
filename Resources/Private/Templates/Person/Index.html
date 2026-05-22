@@ -1,0 +1,166 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:gg="http://typo3.org/ns/Gg/Person/ViewHelpers">
+
+    <f:if condition="{count} > 0">
+        <f:then>
+            <ul class="listPerson" id="person-list-top">        
+                <f:for each="{paginator.paginatedItems}" as="person">
+                    <li>
+                        <span class="personal">                            
+                        <f:if condition="{settings.noname} == '0'">                         
+                            <f:if condition="{settings.onlyname} == '1'">
+                                <f:then><span><strong>
+                                    <f:if condition="{settings.gender} == '1'">
+                                        <f:if condition="{person.gender} == 1">Frau</f:if>
+                                        <f:if condition="{person.gender} == 2">Herr</f:if>
+                                    </f:if>
+                                     {person.lastName}</strong></span><span class="d-none">{person.uid}</span>                  
+                                </f:then>
+                                <f:else><span><strong>
+                                    <f:if condition="{settings.gender} == '1'">
+                                        <f:if condition="{person.gender} == 1">Frau</f:if>
+                                        <f:if condition="{person.gender} == 2">Herr</f:if>
+                                    </f:if>
+                                    {person.firstName} {person.lastName}</strong></span><span class="d-none">{person.uid}</span>                        
+                                </f:else>       
+                            </f:if>
+                        </f:if> 
+
+                        <f:if condition="{settings.position}">
+                            <f:if condition="{person.position} != ''">
+                                <span>{person.position}</span>
+                            </f:if>
+                        </f:if>
+                        <f:if condition="{settings.area}">
+                            <f:if condition="{person.area} != ''">
+                                <span>{person.area}</span>
+                            </f:if>
+                        </f:if>
+                        <f:if condition="{settings.department}">
+                            <f:if condition="{person.department} != ''">
+                                <span>{person.department}</span>
+                            </f:if>
+
+                        </f:if>
+                     </span>
+
+                     <f:if condition="{settings.address} || {settings.zip} || {settings.office}">
+                        <span class="address">
+                            <f:if condition="{settings.address}">
+                                <f:if condition="{person.address} != ''">
+                                    <span>{person.address}</span>
+                                </f:if>
+                            </f:if>
+                            <f:if condition="{settings.zip}">
+                                <f:if condition="{person.zip} != ''">
+                                    <span>{person.zip} {person.city}</span>
+                                </f:if>
+                            </f:if>
+                            <f:if condition="{settings.office}">
+                                <f:if condition="{person.office} != ''">
+                                    <span><f:translate key="LLL:EXT:person/Resources/Private/Language/locallang.xlf:office" />: {person.office}</span>
+                                </f:if>
+                            </f:if>
+                        </span>
+                    </f:if>
+
+                    <f:if condition="{settings.telephone} || {settings.fax} || {settings.email} ">
+                        <span class="communication">
+                            <f:if condition="{settings.telephone}">
+                                <f:if condition="{person.telephone}} != ''">
+                                    <span><a href="tel:{person.telephone}" class="link-phone">{person.telephone}</a></span>
+                                </f:if>
+                            </f:if>
+                            <f:if condition="{settings.fax}">
+                                <f:if condition="{person.fax} != ''">
+                                    <span><a href="fax:{person.fax}" class="link-fax">{person.fax}</a></span>
+                                </f:if>
+                            </f:if>
+
+                            <f:if condition="{settings.email}">
+                                <f:if condition="{person.email} != ''">
+                                    <f:if condition="{settings.emailformat} == 0">
+                                        <span><f:link.email class="link-mail" email="{person.email}" /></span>
+                                    </f:if>
+                                    <f:if condition="{settings.emailformat} == 1">
+                                        <span><f:link.email class="link-mail" email="{person.email}">{person.firstName} {person.lastName}</f:link.email></span>
+                                    </f:if>
+                                    <f:if condition="{settings.emailformat} == 2">
+                                        <span><f:link.email class="link-mail" email="{person.email}">E-Mail</f:link.email></span>
+                                    </f:if>
+                                </f:if>
+                            </f:if>
+                        </span>
+                    </f:if>
+                       </li>
+
+               </f:for>
+             </ul>
+           <f:if condition="{settings.ownemail} != ''">
+               <span class="extraemail"><f:link.email class="link-mail" email="{settings.ownemail}">{settings.ownemail}</f:link.email></span>
+           </f:if>
+  
+        </f:then>
+        <f:else>
+            <p>Im Plugin wurde nichts ausgewählt</p>
+        </f:else>
+    </f:if>
+	    
+	<!-- Paginierungs-Navigation -->
+	<f:if condition="{paginator.numberOfPages} > 1">
+	    <nav aria-label="Page navigation">
+	        <ul class="pagination">
+	
+	            <!-- ZURÜCK BUTTON -->
+	            <li class="page-item {f:if(condition: pagination.previousPageNumber, else: 'disabled')}">
+	                <f:if condition="{pagination.previousPageNumber}">
+	                    <f:then>
+	                        <f:link.action action="index" arguments="{currentPage: pagination.previousPageNumber}" section="person-list-top" class="page-link" aria-label="Zurück">
+	                            <span aria-hidden="true">&laquo; Zurück</span>
+	                        </f:link.action>
+	                    </f:then>
+	                    <f:else>
+	                        <span class="page-link">&laquo; Zurück</span>
+	                    </f:else>
+	                </f:if>
+	            </li>
+	
+	            <!-- SEITENZAHLEN (Sliding Window Logik) -->
+	            <f:for each="{pagination.allPageNumbers}" as="page">
+	                <f:comment>Zeige Seite 1, die letzte Seite und alles im Umkreis von 2 Seiten um die aktuelle</f:comment>
+	                <f:if condition="{page} == 1 || {page} == paginator.numberOfPages || ({page} >= {paginator.currentPageNumber - 2} && {page} <= {paginator.currentPageNumber + 2})">
+	                    <f:then>
+	                        <li class="page-item {f:if(condition: '{page} == paginator.currentPageNumber', then: 'active')}">
+	                            <f:link.action action="index" arguments="{currentPage: page}" section="person-list-top"  class="page-link active">{page}</f:link.action>
+	                        </li>
+	                    </f:then>
+	                    <f:else>
+	                        <f:comment>Zeige Punkte nur an den Übergängen</f:comment>
+	                        <f:if condition="{page} == 2 || {page} == {paginator.numberOfPages - 1}">
+	                            <li class="page-item disabled"><span class="page-link">..</span></li>
+	                        </f:if>
+	                    </f:else>
+	                </f:if>
+	            </f:for>
+	
+	            <!-- WEITER BUTTON -->
+	            <li class="page-item {f:if(condition: pagination.nextPageNumber, else: 'disabled')}">
+	                <f:if condition="{pagination.nextPageNumber}">
+	                    <f:then>
+	                        <f:link.action action="index" arguments="{currentPage: pagination.nextPageNumber}" section="person-list-top"  class="page-link" aria-label="Weiter">
+	                            <span aria-hidden="true">Weiter &raquo;</span>
+	                        </f:link.action>
+	                    </f:then>
+	                    <f:else>
+	                        <span class="page-link">Weiter &raquo;</span>
+	                    </f:else>
+	                </f:if>
+	            </li>
+	
+	        </ul>
+	    </nav>
+	</f:if>
+
+
+</html>

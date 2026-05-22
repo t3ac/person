@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:person/Resources/Private/Language/locallang_db.xlf" date="2026-05-03T21:06:14Z" product-name="person">
+		<header/>
+		<body>
+			<trans-unit id="tx_person_pi1.name" resname="tx_person_pi1.name">
+				<source>Pi1</source>
+			</trans-unit>
+			<trans-unit id="tx_person_pi1.description" resname="tx_person_pi1.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_person_pi2.name" resname="tx_person_pi2.name">
+				<source>Pi2</source>
+			</trans-unit>
+			<trans-unit id="tx_person_pi2.description" resname="tx_person_pi2.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_person_pi3.name" resname="tx_person_pi3.name">
+				<source>Pi3</source>
+			</trans-unit>
+			<trans-unit id="tx_person_pi3.description" resname="tx_person_pi3.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="flexform.all_departments">
+				<source>Choose a department</source>
+				<target state="translated">--- Abteilung wählen ---</target>   
+			</trans-unit>			
+            <trans-unit id="flexform.all_user">
+                <source>Choose user</source>
+                <target state="translated">--- Personen auswählen ---</target>  
+            </trans-unit> 
+            <trans-unit id="flexform.all_area">
+                <source>Choose an area</source>
+                <target state="translated">--- Bereich auswählen ---</target>  
+            </trans-unit>
+            <trans-unit id="flexform.area_first">
+                <source>... Select an area first ...</source>
+                <target state="translated">--- Zuerst einen Bereich wählen ---</target>  
+            </trans-unit>
+                   
+		</body>
+	</file>
+</xliff>
