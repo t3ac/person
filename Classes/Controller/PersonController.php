@@ -36,7 +36,7 @@ class PersonController extends ActionController
         $selectedDept = $this->settings['department'] ?? '';
         $selectedArea = $this->settings['area'] ?? '';
         
-        // 1. Daten  holen
+        // 1. Daten holen
         if (!empty($selectedUserUids) && $selectedUserUids !== '0') {
             $uids = \TYPO3\CMS\Core\Utility\GeneralUtility::intExplode(',', (string)$selectedUserUids, true);
             $allItems = $this->personRepository->findByUids($uids);
@@ -45,25 +45,22 @@ class PersonController extends ActionController
         } elseif (!empty($selectedArea) && $selectedArea !== '0') {
             $allItems = $this->personRepository->findByArea((string)$selectedArea);
         } else {
-            $allItems = [];
+            // KORREKTUR: Ein leeres Extbase-QueryResult statt eines Arrays erzeugen
+            $allItems = $this->personRepository->createEmptyResult();
         }
-        
         
         // Wert aus der Flexform holen
         $itemsPerPage = (int)($this->settings['itemsPerPage'] ?? 10);
-        
-        // Sicherstellen, dass nicht versehentlich 0 eingetragen wurde
         if ($itemsPerPage <= 0) {
             $itemsPerPage = 10;
         }
         
         // 2. Pagination Parameter
-        $itemsPerPage = (int)($this->settings['itemsPerPage'] ?? 10);
         $currentPage = $this->request->hasArgument('currentPage')
         ? (int)$this->request->getArgument('currentPage')
         : 1;
         
-        // 3. Paginator aufbauen
+        // 3. Paginator aufbauen (stürzt jetzt nicht mehr ab)
         $paginator = new QueryResultPaginator($allItems, $currentPage, $itemsPerPage);
         $pagination = new SimplePagination($paginator);
         
@@ -75,18 +72,38 @@ class PersonController extends ActionController
         
         return $this->htmlResponse();
     }
+
     
-	/**
-	* action list
-	*
-	* @return string|object|null|void
-	*/
-	public function listAction(): ResponseInterface
-	{
-		$person = $this->personRepository->findAll();
-		$this->view->assign('person', $person);
+    /**
+     * Action list
+     */
+    public function listAction(): ResponseInterface
+    {
+        // TYPO3 13 Best Practice: Erst prüfen, ob die Einstellung existiert und befüllt ist
+        $storagePid = '';
+        if (isset($this->settings['pages']) && (string)$this->settings['pages'] !== '') {
+            $storagePid = trim((string)$this->settings['pages']);
+        }
+        
+        // Harder Check: Wenn der String leer, '0' oder nicht gesetzt ist -> Liste MUSS leer sein
+        if ($storagePid === '' || $storagePid === '0') {
+            $personen = [];
+        } else {
+            // Findet nur Personen in den explizit ausgewählten Ordnern
+            $personen = $this->personRepository->findAllName($storagePid);
+        }
+        
+        // Zählen der Ergebnisse für das Fluid-Template
+        $count = is_countable($personen) ? count($personen) : 0;
+        
+        $this->view->assignMultiple([
+            'person' => $personen,
+            'count' => $count
+        ]);
+        
         return $this->htmlResponse();
-	}
+    }
+    
 	
 	public function searchAction(string $firstChar = '', string $searchWord = ''): ResponseInterface
 	{
