@@ -134,5 +134,13 @@ class PersonRepository extends Repository
         return $query->execute();
     }
     
-    
+    /**
+     * Erzeugt ein leeres QueryResultInterface-Objekt für den Paginator
+     */
+    public function createEmptyResult(): \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+    {
+        $query = $this->createQuery();
+        // Ein unmöglicher Constraint (UID = 0) erzwingt ein leeres, typkorrektes Ergebnis
+        return $query->matching($query->equals('uid', 0))->execute();
+    }
 }
